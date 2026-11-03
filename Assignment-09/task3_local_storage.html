@@ -1,0 +1,22 @@
+<!-- Name: Kavyansh Bhadri | Roll Number: 2510303259 | Assignment: 9, Task: 3 -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Local Storage Note</title></head>
+<body>
+  <h1>My Note</h1>
+  <input type="text" id="noteInput" placeholder="Write your note">
+  <button id="saveButton">Save</button>
+  <p id="status"></p>
+  <script>
+    const noteInput = document.getElementById("noteInput");
+    const status = document.getElementById("status");
+
+    noteInput.value = localStorage.getItem("note") || "";
+
+    document.getElementById("saveButton").addEventListener("click", () => {
+      localStorage.setItem("note", noteInput.value);
+      status.textContent = "Note saved";
+    });
+  </script>
+</body>
+</html>

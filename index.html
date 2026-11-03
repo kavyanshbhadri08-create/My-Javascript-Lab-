@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Programming Lab | Index</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            color: #222;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #1f2937;
+        }
+
+        .details {
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 13px;
+            text-align: left;
+        }
+
+        th {
+            background: #24292f;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        tr:hover {
+            background: #eef4ff;
+        }
+
+        a {
+            color: #0969da;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .assignment {
+            font-weight: bold;
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 15px;
+                overflow-x: auto;
+            }
+
+            table {
+                min-width: 650px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>JavaScript Programming Lab</h1>
+
+    <div class="details">
+        <p><strong>Name:</strong> Kavyansh Bhadri</p>
+        <p><strong>Roll Number:</strong> 2510303259</p>
+        <p><strong>Course:</strong> B.Tech CSE</p>
+        <p><strong>University:</strong> Invertis University, Bareilly</p>
+        <p><strong>Subject Code:</strong> BCS354</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Assignment</th>
+                <th>Task</th>
+                <th>File Name</th>
+                <th>Open File</th>
+            </tr>
+        </thead>
+
+        <tbody id="assignmentTable"></tbody>
+    </table>
+
+    <footer>
+        <p>JavaScript Programming Lab | BCS354</p>
+        <p>© 2026 Kavyansh Bhadri</p>
+    </footer>
+
+</div>
+
+<script>
+    const githubBase =
+        "https://github.com/Kavyansh2882-sys/JAVASCRIPT-Lab/blob/main/";
+
+    const assignments = [
+        {
+            number: "01",
+            files: [
+                "task1_hello_script.html",
+                "task2_variables.js",
+                "task3_typeof.js",
+                "test.html"
+            ]
+        },
+        {
+            number: "02",
+            files: [
+                "task1_arithmetic.js",
+                "task2_type_conversion.js",
+                "task3_operator_calculator.js",
+                "test.html"
+            ]
+        },
+        {
+            number: "03",
+            files: [
+                "task1_grades.js",
+                "task2_for_loop.js",
+                "task3_while_total.js",
+                "test.html"
+            ]
+        },
+        {
+            number: "04",
+            files: [
+                "task1_greet_function.js",
+                "task2_arrow_square.js",
+                "task3_default_parameter.js",
+                "test.html"
+            ]
+        },
+        {
+            number: "05",
+            files: [
+                "task1_marks_array.js",
+                "task2_for_each_subjects.js",
+                "task3_filter_marks.js",
+                "task4_nested_array.js",
+                "test.html"
+            ]
+        },
+        {
+            number: "06",
+            files: [
+                "task1_json_stringify.js",
+                "task2_json_parse.js",
+                "task3_invalid_json.js",
+                "test.html"
+            ]
+        },
+        {
+            number: "07",
+            files: [
+                "task1_constructor_function.js",
+                "task2_book_class.js",
+                "task3_prototype_method.js",
+                "test.html"
+            ]
+        },
+        {
+            number: "08",
+            files: [
+                "README.md",
+                "task1_inheritance.js",
+                "task2_locker.js",
+                "task3_composition.js",
+                "test.html"
+            ]
+        },
+        {
+            number: "09",
+            files: [
+                "task1_dom_button.html",
+                "task2_form_validation.js",
+                "task3_local_storage.html",
+                "task4_quiz.html",
+                "test.html"
+            ]
+        },
+        {
+            number: "10",
+            files: [
+                "task1_object_properties.js",
+                "task2_array_destructuring.js",
+                "task3_object_destructuring.js",
+                "test.html"
+            ]
+        },
+        {
+            number: "11",
+            files: [
+                "task1_block_scope.js",
+                "task2_closure_counter.js",
+                "task3_global_scope.js",
+                "test.html"
+            ]
+        },
+        {
+            number: "12",
+            files: [
+                "task1_apply_twice.js",
+                "task2_format_marks.js",
+                "task3_repeat_action.js",
+                "test.html"
+            ]
+        },
+        {
+            number: "13",
+            files: [
+                "task1_reduce_total.js",
+                "task2_some_every.js",
+                "task3_map_marks.js",
+                "test.html"
+            ]
+        },
+        {
+            number: "14",
+            files: [
+                "task1_set_timeout.js",
+                "task2_clear_timeout.js",
+                "task3_set_interval.js",
+                "test.html"
+            ]
+        },
+        {
+            number: "15",
+            files: [
+                "task1_promise_resolve.js",
+                "task2_promise_reject.js",
+                "task3_async_await.js",
+                "task4_local_users.js",
+                "test.html"
+            ]
+        }
+    ];
+
+    const table = document.getElementById("assignmentTable");
+
+    assignments.forEach(assignment => {
+
+        assignment.files.forEach((file, index) => {
+
+            const folder =
+                `Assignment-${assignment.number}/`;
+
+            const filePath = folder + file;
+
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td class="assignment">
+                    ${index === 0 ? "Assignment " + assignment.number : ""}
+                </td>
+
+                <td>
+                    ${file === "test.html" || file === "README.md"
+                        ? "-"
+                        : "Task " + file.match(/task(\\d+)/)?.[1]}
+                </td>
+
+                <td>${file}</td>
+
+                <td>
+                    <a href="${githubBase + filePath}"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View File
+                    </a>
+                </td>
+            `;
+
+            table.appendChild(row);
+        });
+
+    });
+</script>
+
+</body>
+</html>

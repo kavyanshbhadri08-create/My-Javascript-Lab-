@@ -1,0 +1,25 @@
+<!-- Name: Kavyansh Bhadri | Roll Number: 2510303259 | Assignment: 9, Task: 4 -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>JavaScript Quiz</title></head>
+<body>
+  <h1>What is 2 + 3?</h1>
+  <label><input type="radio" name="answer" value="4"> 4</label>
+  <label><input type="radio" name="answer" value="5"> 5</label>
+  <label><input type="radio" name="answer" value="6"> 6</label>
+  <button id="checkButton">Check answer</button>
+  <p id="result"></p>
+  <script>
+    document.getElementById("checkButton").addEventListener("click", () => {
+      const selected = document.querySelector('input[name="answer"]:checked');
+      const result = document.getElementById("result");
+
+      if (selected && selected.value === "5") {
+        result.textContent = "Correct";
+      } else {
+        result.textContent = "Try again";
+      }
+    });
+  </script>
+</body>
+</html>
